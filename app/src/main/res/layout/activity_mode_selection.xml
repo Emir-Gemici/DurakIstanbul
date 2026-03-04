@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/img_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/giris"
+        android:contentDescription="Arka Plan Görseli" />
+
+    <!-- 🚀 ScrollView: Tüm butonların her zaman erişilebilir olmasını sağlar -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:background="#A6000000"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DURAK İSTANBUL"
+                android:textColor="#FFFFFF"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="32dp"
+                android:shadowColor="#000000"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="8"/>
+
+            <!-- 🎲 RASGELE MOD KARTI -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_random"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="#CC1E1E1E"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="6dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🎲 Rasgele Mod"
+                        android:textColor="#BB86FC"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_random_desc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Soru sayısını sen belirle, karışık rotalarla maratona başla!"
+                        android:textColor="#E0E0E0"
+                        android:visibility="gone"
+                        android:layout_marginTop="8dp"
+                        android:textSize="16sp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 🏆 FULL MOD KARTI -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_full"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                app:cardBackgroundColor="#CC1E1E1E"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="6dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🏆 Full Mod (Sertifikalı)"
+                        android:textColor="#03DAC6"
+                        android:textSize="22sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tv_full_desc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Seçtiğin bölgedeki tüm hattı hatasız tamamla, uzmanlık sertifikanı koleksiyonuna ekle."
+                        android:textColor="#E0E0E0"
+                        android:visibility="gone"
+                        android:layout_marginTop="8dp"
+                        android:textSize="16sp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 🚀 ANA AKSİYON BUTONU -->
+            <Button
+                android:id="@+id/btn_start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="OYUNU BAŞLAT"
+                android:backgroundTint="#6200EE"
+                android:padding="18dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="40dp"
+                android:elevation="4dp"/>
+
+            <!-- AYRAÇ -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#555555"
+                android:layout_marginBottom="32dp"/>
+
+            <!-- 🏅 KOLEKSİYON VE SIRALAMA BÖLÜMÜ -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginBottom="24dp">
+
+                <Button
+                    android:id="@+id/btn_certificates"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="10dp"
+                    android:text="Sertifikalarım"
+                    android:backgroundTint="#333333"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:padding="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:icon="@android:drawable/ic_menu_agenda"
+                    app:iconGravity="textStart" />
+
+                <Button
+                    android:id="@+id/btn_leaderboard"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Sıralama"
+                    android:backgroundTint="#333333"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:padding="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:icon="@android:drawable/btn_star_big_on"
+                    app:iconGravity="textStart" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
